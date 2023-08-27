@@ -7,7 +7,7 @@ import {
 import "./index.css";
 import LoginPage from "./pages/LoginPage";
 import ErrorPage from "./pages/ErrorPage";
-import FeedPage from "./pages/FeedPage";
+import FeedPage from "./pages/FeedPage/FeedPage";
 import RegisterPage from "./pages/RegisterPage";
 
 const router = createBrowserRouter([
@@ -19,10 +19,24 @@ const router = createBrowserRouter([
   {
     path: "/feed",
     element: <FeedPage/>,
+    children: [
+      {
+        path: "/feed/register",
+        element: <RegisterPage/>,
+      },
+      {
+        path: "/feed/login",
+        element: <LoginPage/>,
+      },
+    ],
   },
   {
     path: "/register",
     element: <RegisterPage/>,
+  },
+  {
+    path: "/login",
+    element: <LoginPage/>,
   },
 ]);
 
