@@ -1,42 +1,35 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import LoginPage from "./pages/LoginPage";
-import ErrorPage from "./pages/ErrorPage";
 import FeedPage from "./pages/FeedPage/FeedPage";
-import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LoginPage/>,
+    element: <LoginPage />,
     errorElement: <ErrorPage/>,
   },
   {
+    path: "/register",
+    element: <RegisterPage />,
+  },
+  {
     path: "/feed",
-    element: <FeedPage/>,
+    element: <FeedPage />,
     children: [
       {
         path: "/feed/register",
-        element: <RegisterPage/>,
+        element: <RegisterPage />,
       },
       {
         path: "/feed/login",
-        element: <LoginPage/>,
+        element: <LoginPage />,
       },
     ],
-  },
-  {
-    path: "/register",
-    element: <RegisterPage/>,
-  },
-  {
-    path: "/login",
-    element: <LoginPage/>,
   },
 ]);
 

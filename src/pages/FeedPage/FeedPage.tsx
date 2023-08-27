@@ -1,58 +1,60 @@
 import { useEffect, useState } from "react";
 import CreatePost from "../../components/CreatePost/CreatePost";
 import FeedPost from "../../components/FeedPost/FeedPost";
-import data from '../../assets/data.json'
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { FeedContainer } from "./FeedPage.styled";
+import data from "../../assets/data.json";
+import { Outlet, useNavigate } from "react-router-dom";
+import {
+  FeedBottomSection,
+  FeedGreeting,
+  FeedGreetingDesc,
+  FeedTopSection,
+  FeedContainer,
+} from "./FeedPage.styled";
 
 const FeedPage = () => {
-  const [postList, setPostList] = useState<IFeedPost[]>([])
-  const [loginActive, setLoginActive] = useState<Boolean | null>(false);
-
-  let location = useLocation();
-  console.log(location)
+  const [postList, setPostList] = useState<IFeedPost[]>([]);
+  const [loginActive, setLoginActive] = useState<boolean>(false);
 
   let navigate = useNavigate();
 
+
   useEffect(() => {
-    setPostList([...data])
-  }, [])
+    setPostList([...data]);
+  }, []);
 
   const handleFeedOnClick = () => {
-    navigate('/feed/register');
+    navigate("/feed/register");
     setLoginActive(true);
-  }
+  };
 
   const handleOutSideClick = () => {
-    if(loginActive){
+    if (loginActive) {
       setLoginActive(false);
-      navigate('/feed')
-    } 
-  }
- 
+      navigate("/feed");
+    }
+  };
+
   return (
-    <FeedContainer onClick={handleOutSideClick}>
+    <>
       <Outlet />
-      <div className="FeedTopSection">
-        <div className="FeedGreeting">
-          <h2>Hello Jane</h2>
-        </div>
-        <div className="FeedGreetingDesc">
-          <p>
+      <FeedContainer onClick={handleOutSideClick} $isBlur={loginActive}>
+        <FeedTopSection>
+          <FeedGreeting>Hello Jane</FeedGreeting>
+          <FeedGreetingDesc>
             How are you doing today? Would you like to share something with the
             community 🤗
-          </p>
-        </div>
-      </div>
-      <div className="FeedBottomSection" onClick={handleFeedOnClick}>
-        <CreatePost />
-        <div className="FeedPostList">
-          {postList?.map((post) => (
-            <FeedPost details={post} key={post.id}/>
-          ))}
-        </div>
-      </div>
-    </FeedContainer>
+          </FeedGreetingDesc>
+        </FeedTopSection>
+        <FeedBottomSection onClick={handleFeedOnClick}>
+          <CreatePost />
+          <div className="FeedPostList">
+            {postList?.map((post) => (
+              <FeedPost details={post} key={post.id} />
+            ))}
+          </div>
+        </FeedBottomSection>
+      </FeedContainer>
+    </>
   );
 };
 

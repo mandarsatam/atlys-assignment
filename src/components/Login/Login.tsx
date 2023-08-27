@@ -17,7 +17,6 @@ import PasswordEye from "../../assets/eye.svg";
 const Login = ({ type }: { type: string }) => {
   const handleOnClick = (e: any) => {
     e.stopPropagation();
-    console.log("Click");
   };
 
   return (

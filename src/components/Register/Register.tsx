@@ -64,7 +64,7 @@ const Register = ({ type }: { type: string }) => {
         <FormSubmitBtn>Register</FormSubmitBtn>
       </Link>
       <LinkContainer>
-        <StyledLink to={type === "root" ? `/login` : `/feed/login`}>
+        <StyledLink to={type === "root" ? `/` : `/feed/login`}>
           <span>Already have an account? </span>
           <span className="highlight">Login →</span>
         </StyledLink>

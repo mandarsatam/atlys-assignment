@@ -2,22 +2,25 @@
   {
     "id": 1,
     "name": "Theresa Webb",
-    "createdAt": "1234",
+    "createdAt": 1693140429643,
     "postContent": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    "numComments": 24
+    "numComments": 24,
+    "imgUrl": "https://i.pravatar.cc/150?img=1"
   },
   {
     "id": 2,
     "name": "Theresa Webb",
-    "createdAt": "1234",
+    "createdAt": 1693140429643,
     "postContent": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    "numComments": 24
+    "numComments": 24,
+    "imgUrl": "https://i.pravatar.cc/150?img=2"
   },
   {
     "id": 3,
     "name": "Theresa Webb",
-    "createdAt": "1234",
+    "createdAt": 1693140429643,
     "postContent": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    "numComments": 24
+    "numComments": 24,
+    "imgUrl": "https://i.pravatar.cc/150?img=3"
   }
 ]

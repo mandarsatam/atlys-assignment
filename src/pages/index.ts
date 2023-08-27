@@ -1,7 +1,8 @@
 interface IFeedPost{
     id: number,
     name: string,
-    createdAt: string,
+    createdAt: number,
     postContent: string,
-    numComments: number
+    numComments: number,
+    imgUrl: string
 }
