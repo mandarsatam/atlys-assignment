@@ -1,9 +1,20 @@
-import Register from "../components/Register/Register"
+import Register from "../components/Register/Register";
+import { LoginPageLogo, LoginPageLogoContainer } from "./LoginPage.styled";
+import LoginIcon from "../assets/loginIcon.svg";
+import { useLocation } from "react-router-dom";
 
 const RegisterPage = () => {
-  return (
-    <Register/>
-  )
-}
+  const location = useLocation();
+  const { pathname } = location;
 
-export default RegisterPage
+  return (
+    <>
+      <LoginPageLogoContainer>
+        <LoginPageLogo src={LoginIcon} />
+      </LoginPageLogoContainer>
+      <Register type={pathname === "/register" ? "root" : "feed"} />
+    </>
+  );
+};
+
+export default RegisterPage;

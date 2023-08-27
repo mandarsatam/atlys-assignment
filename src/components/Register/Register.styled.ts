@@ -1,15 +1,27 @@
-import styled from "styled-components";
+import {
+  FormItemInput,
+  FormItemLabel,
+  FormItemLabelContainer,
+  FormPasswordIcon,
+  FormSubmitBtn,
+  LinkContainer,
+  LoginContainer,
+  LoginFormItem,
+  LoginSubTitle,
+  LoginTitle,
+  StyledLink,
+} from "../Login/Login.styled";
 
-export const RegisterContainer = styled.div`
-  width: 50%;
-  margin: auto;
-  text-align: center;
-  background: #27292d;
-  border: 2px solid #545454;
-  border-radius: 5px;
-  padding: 1em;
-  position: fixed;
-  top: 25%;
-  left: 25%;
-  z-index: 100;
-`;
+export {
+  FormItemInput,
+  FormItemLabel,
+  FormItemLabelContainer,
+  FormPasswordIcon,
+  FormSubmitBtn,
+  LinkContainer,
+  LoginContainer as RegisterContainer,
+  StyledLink,
+  LoginFormItem as RegisterFormItem,
+  LoginSubTitle as RegisterSubTitle,
+  LoginTitle as RegisterTitle,
+};
